@@ -1,35 +1,64 @@
-const http = require('http')
-const url = require('url')
-http.createServer((request, response) => {
-     // console.log('server work')
-     // console.log(request.method)
-     console.log(request)
-     switch(request.method){
-          case 'GET':
-               let urlRequest = url.parse(request.url, true)
-               if(urlRequest.query.name == 'антон'){
-                    response.end('This Antonio page')
-               } else {
-                    response.end('This page is only for Antonio')
-               }
-               break
-          case 'POST':
-               let body = ''
-               request.on('data', chuck => {
-                    body += chuck.toString()
-               })
-               request.on('end', ()=>{
-                    console.log(body)
-                    response.end('ok')
-               })
-          default:
-               response.end('Method not found')
+// const mysql = require('mysql')
 
-     }
+// var connection = mysql.createConnection({
+//      host     : 'localhost',
+//      user     : 'root',
+//      database : '47chromo',
+//      password : ''
+// });
+
+// connection.connect(err=>{
+//      if(err){
+//           console.log(err)
+//           return err
+//      } else {
+//           console.log('Есть запроос')
+//      }
+// })
+
+// let queryString = 'SELECT * FROM accounts'
+
+// connection.query(queryString, (eror, res, field)=>{
+//      console.log(res)
+// })
+
+// connection.end(eer=>console.log(eer))
+
+// Lesson 4
+// ----------------------
+// Lesson 3 End
+// const http = require('http')
+// const url = require('url')
+// http.createServer((request, response) => {
+//      // console.log('server work')
+//      // console.log(request.method)
+//      console.log(request)
+//      switch(request.method){
+//           case 'GET':
+//                let urlRequest = url.parse(request.url, true)
+//                if(urlRequest.query.name == 'антон'){
+//                     response.end('This Antonio page')
+//                } else {
+//                     response.end('This page is only for Antonio')
+//                }
+//                break
+//           case 'POST':
+//                let body = ''
+//                request.on('data', chuck => {
+//                     body += chuck.toString()
+//                })
+//                request.on('end', ()=>{
+//                     console.log(body)
+//                     response.end('ok')
+//                })
+//           default:
+//                response.end('Method not found')
+
+//      }
      
      
      
-}).listen(3000)
+// }).listen(3000)
 // Lesson 3 
 // -------------
 // Lesson 2 End
