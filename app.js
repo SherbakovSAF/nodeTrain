@@ -18,11 +18,11 @@
 
 // Test end
 
-const fs = require('fs')
-const path = require('path')
+
 // Lesson 1
 // console.log(process)
-
+const fs = require('fs')
+const path = require('path')
 function textTest(){
       fs.readFile('text.txt', 'utf-8', (error,data)=>{
           console.log(data)
@@ -54,5 +54,9 @@ function readDirectionSync(){
      
 }
 
+fs.writeFile('./textStorage/newFile.txt', 'Заметочка', (error,data)=>{})
+
 readDirectionSync()
 
+// Lesson 1 End
+// Lesson 2
